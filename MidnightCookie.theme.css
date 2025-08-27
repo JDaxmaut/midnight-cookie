@@ -2,7 +2,7 @@
  * @name MidnightCookie
  * @version 1.0
  * @description A sophisticated dark theme with warm cookie-inspired accents and midnight blue tones.
- * @author MidnightCookie Creator
+ * @author Daxmaut
  */
 
 @import url(https://capnkitten.github.io/BetterDiscord/Themes/Translucence/css/source.css);
@@ -150,3 +150,4 @@
 ::-webkit-scrollbar-thumb:hover {
 	background: hsl(28, 80%, 65%);
 }
+
