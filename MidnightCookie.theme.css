@@ -1,0 +1,152 @@
+/**
+ * @name MidnightCookie
+ * @version 1.0
+ * @description A sophisticated dark theme with warm cookie-inspired accents and midnight blue tones.
+ * @author MidnightCookie Creator
+ */
+
+@import url(https://capnkitten.github.io/BetterDiscord/Themes/Translucence/css/source.css);
+
+:root {
+	/* ИКОНКА ЛИЧНЫХ СООБЩЕНИЙ */
+	--dm-icon: url('https://www.clipartmax.com/png/middle/231-2318924_cookie-cliparts-transparent-cookie-clipart-no-background.png');
+	
+	/* APP ELEMENTS */
+	--app-bg: rgb(25, 20, 18);
+	--app-blur: 12px;
+	--app-margin: 0px;
+	--app-radius: 8px;
+	--main-rgb: rgba(255, 255, 255, 0.85);
+	--main-content-color: rgba(255, 255, 255, 0.2);
+	
+	/* ACCENT HSL AND TEXT COLOR SETTINGS */
+	--accent-hue: 28;
+	--accent-saturation: 80%;
+	--accent-lightness: 60%;
+	--accent-opacity: 1;
+	--accent-text-color: hsl(0, 0%, 100%);
+	
+	/* SIDEBARS AND CHAT AREA COLOR SETTINGS */
+	--sidebar-color: hsl(220, 15%, 12%);
+	--main-content-color: hsl(225, 12%, 15%);
+
+	/* MESSAGE SETTINGS */
+	--message-color: hsla(0, 0%, 0%, 0.25);
+	--message-radius: 10px;
+	--message-padding-top: 10px;
+	--message-padding-side: 10px;
+	
+	/* REPLY HSL COLOR SETTINGS */
+	--reply-hue: 32;
+	--reply-saturation: 45%;
+	--reply-lightness: 50%;
+	--reply-opacity: 1;
+
+	/* TEXTAREA SETTINGS */
+	--textarea-color: 255,255,255;
+	--textarea-alpha: 0.12;
+	--textarea-alpha-focus: 0.18;
+	--textarea-text-color: hsl(0,0%,100%);
+	--textarea-radius: 24px;
+
+	/* CARD SETTINGS */
+	--card-color: hsl(0, 0%, 0%);
+	--card-color-hover: hsl(0, 0%, 0%);
+	--card-color-select: hsl(0, 0%, 12%);
+	
+	/* BUTTON SETTINGS */
+	--button-height: 36px;
+	--button-padding: 0 18px;
+	--button-action-color: hsl(0, 0%, 8%);
+	--button-radius: 18px;
+}
+
+.visual-refresh.theme-dark {
+	/* TEXT COLOR SETTINGS */
+	--text-primary: hsl(0, 0%, 100%);
+	--text-secondary: hsl(0, 0%, 95%);
+
+	/* CHANNEL COLOR SETTINGS */
+	--channels-default: hsl(0, 0%, 92%);
+	--channel-icon: hsl(0,0%,65%);
+
+	/* ICON COLOR SETTINGS */
+	--icon-primary: hsl(0,0%,98%);
+	--icon-secondary: hsl(0,0%,88%);
+	--icon-tertiary: hsl(0,0%,75%);
+
+	/* INTERACTIVE COLOR SETTINGS */
+	--interactive-normal: hsl(0,0%,82%);
+	--interactive-hover: hsl(0,0%,94%);
+	--interactive-active: hsl(0,0%,100%);
+	--interactive-muted: hsl(0,0%,48%);
+
+	/* BACKGROUND MODIFIER SETTINGS */
+	--background-modifier-hover: hsla(0, 0%, 0%, 0.28);
+	--background-modifier-selectekd: hsla(0, 0%, 35%, 0.15);
+
+    /* POPOUT SETTINGS */
+	--popout-color: hsla(0, 0%, 0%, 0.65);
+  	--popout-blur: 10px;
+  	--popout-header-opacity: 0.35;
+  	--popout-header-shadow: 0px 2px 4px 0px rgb(186, 148, 94);
+  	--popout-radius: var(--app-radius);
+  	--popout-shadow: 0 10px 12px 0px hsl(0,0%,0%,0.18), 0 4px 16px 3px hsl(0,0%,0%,0.15), 0 6px 6px -3px hsl(0,0%,0%,0.25);
+
+	 /* CARD SETTINGS */
+  	--card-color: hsl(0,0%,0%,0.45);
+  	--card-color-hover: hsl(0,0%,0%,0.55);
+  	--card-color-select: hsl(0,0%,0%,0.65);
+  	--card-radius: var(--app-radius);
+  	--card-header-shadow: 0px 4px 12px 0px hsl(0,0%,0%,0.3);
+}
+
+/* Замена иконки личных сообщений */
+.privateChannels__35e86 .channel__972a0[data-list-item-id*="private"] .icon__0cbed {
+	background-image: url('file:///C:/Users/kakoj/Desktop/ARCH-RemoteNG/cookie.jpg') !important;
+	background-size: 26px 26px !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+}
+  
+/* Скрываем оригинальную иконку */
+.privateChannels__35e86 .channel__972a0[data-list-item-id*="private"] svg {
+	display: none !important;
+}
+
+/* Дополнительные стили для MidnightCookie */
+.members__9f47b {
+	background: linear-gradient(135deg, hsl(220, 15%, 12%), hsl(225, 12%, 15%));
+}
+
+.channel__972a0:hover {
+	background: linear-gradient(90deg, hsla(28, 80%, 60%, 0.1), transparent);
+	transition: all 0.3s ease;
+}
+
+.message__80c10 {
+	border-left: 3px solid transparent;
+	transition: border-left 0.3s ease;
+}
+
+.message__80c10:hover {
+	border-left-color: hsl(28, 80%, 60%);
+}
+
+/* Стилизация скроллбара */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: hsl(220, 15%, 12%);
+}
+
+::-webkit-scrollbar-thumb {
+	background: hsl(28, 80%, 60%);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: hsl(28, 80%, 65%);
+}
