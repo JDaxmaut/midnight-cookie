@@ -152,9 +152,33 @@
 }
 
 /* MAIN CONTENT */
-.main-3J1Y_w {
-  background: var(--main-content-color) !important;
+.main-3J1Y_w,
+[class*="chatContent"] {
+  background: transparent !important;
   backdrop-filter: blur(var(--app-blur));
+}
+
+/* CHAT BACKGROUND - поддерживает нативное фоновое изображение Discord */
+[class*="chat"] {
+  background: transparent !important;
+}
+
+[class*="chat"] [class*="scroller"] {
+  background: transparent !important;
+}
+
+[class*="background"] {
+  opacity: 1 !important;
+}
+
+/* Фон сообщений (поверх картинки) */
+.message__80c10 {
+  background: var(--message-color);
+  backdrop-filter: blur(2px);
+}
+
+[class*="message"] {
+  backdrop-filter: blur(2px);
 }
 
 /* CHANNEL LIST */
@@ -176,6 +200,7 @@
 /* MESSAGE STYLES */
 .message__80c10 {
   background: var(--message-color);
+  backdrop-filter: blur(2px);
   border-radius: var(--message-radius);
   padding: var(--message-padding-top) var(--message-padding-side);
   margin: 4px 0;

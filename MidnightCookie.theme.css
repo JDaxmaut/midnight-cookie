@@ -2,152 +2,515 @@
  * @name MidnightCookie
  * @version 1.0
  * @description A sophisticated dark theme with warm cookie-inspired accents and midnight blue tones.
- * @author Daxmaut
+ * @author dxmta.Avi
  */
 
-@import url(https://capnkitten.github.io/BetterDiscord/Themes/Translucence/css/source.css);
-
 :root {
-	/* ИКОНКА ЛИЧНЫХ СООБЩЕНИЙ */
-	--dm-icon: url('https://www.clipartmax.com/png/middle/231-2318924_cookie-cliparts-transparent-cookie-clipart-no-background.png');
-	
-	/* APP ELEMENTS */
-	--app-bg: rgb(25, 20, 18);
-	--app-blur: 12px;
-	--app-margin: 0px;
-	--app-radius: 8px;
-	--main-rgb: rgba(255, 255, 255, 0.85);
-	--main-content-color: rgba(255, 255, 255, 0.2);
-	
-	/* ACCENT HSL AND TEXT COLOR SETTINGS */
-	--accent-hue: 28;
-	--accent-saturation: 80%;
-	--accent-lightness: 60%;
-	--accent-opacity: 1;
-	--accent-text-color: hsl(0, 0%, 100%);
-	
-	/* SIDEBARS AND CHAT AREA COLOR SETTINGS */
-	--sidebar-color: hsl(220, 15%, 12%);
-	--main-content-color: hsl(225, 12%, 15%);
-
-	/* MESSAGE SETTINGS */
-	--message-color: hsla(0, 0%, 0%, 0.25);
-	--message-radius: 10px;
-	--message-padding-top: 10px;
-	--message-padding-side: 10px;
-	
-	/* REPLY HSL COLOR SETTINGS */
-	--reply-hue: 32;
-	--reply-saturation: 45%;
-	--reply-lightness: 50%;
-	--reply-opacity: 1;
-
-	/* TEXTAREA SETTINGS */
-	--textarea-color: 255,255,255;
-	--textarea-alpha: 0.12;
-	--textarea-alpha-focus: 0.18;
-	--textarea-text-color: hsl(0,0%,100%);
-	--textarea-radius: 24px;
-
-	/* CARD SETTINGS */
-	--card-color: hsl(0, 0%, 0%);
-	--card-color-hover: hsl(0, 0%, 0%);
-	--card-color-select: hsl(0, 0%, 12%);
-	
-	/* BUTTON SETTINGS */
-	--button-height: 36px;
-	--button-padding: 0 18px;
-	--button-action-color: hsl(0, 0%, 8%);
-	--button-radius: 18px;
-}
-
-.visual-refresh.theme-dark {
-	/* TEXT COLOR SETTINGS */
-	--text-primary: hsl(0, 0%, 100%);
-	--text-secondary: hsl(0, 0%, 95%);
-
-	/* CHANNEL COLOR SETTINGS */
-	--channels-default: hsl(0, 0%, 92%);
-	--channel-icon: hsl(0,0%,65%);
-
-	/* ICON COLOR SETTINGS */
-	--icon-primary: hsl(0,0%,98%);
-	--icon-secondary: hsl(0,0%,88%);
-	--icon-tertiary: hsl(0,0%,75%);
-
-	/* INTERACTIVE COLOR SETTINGS */
-	--interactive-normal: hsl(0,0%,82%);
-	--interactive-hover: hsl(0,0%,94%);
-	--interactive-active: hsl(0,0%,100%);
-	--interactive-muted: hsl(0,0%,48%);
-
-	/* BACKGROUND MODIFIER SETTINGS */
-	--background-modifier-hover: hsla(0, 0%, 0%, 0.28);
-	--background-modifier-selectekd: hsla(0, 0%, 35%, 0.15);
-
-    /* POPOUT SETTINGS */
-	--popout-color: hsla(0, 0%, 0%, 0.65);
-  	--popout-blur: 10px;
-  	--popout-header-opacity: 0.35;
-  	--popout-header-shadow: 0px 2px 4px 0px rgb(186, 148, 94);
-  	--popout-radius: var(--app-radius);
-  	--popout-shadow: 0 10px 12px 0px hsl(0,0%,0%,0.18), 0 4px 16px 3px hsl(0,0%,0%,0.15), 0 6px 6px -3px hsl(0,0%,0%,0.25);
-
-	 /* CARD SETTINGS */
-  	--card-color: hsl(0,0%,0%,0.45);
-  	--card-color-hover: hsl(0,0%,0%,0.55);
-  	--card-color-select: hsl(0,0%,0%,0.65);
-  	--card-radius: var(--app-radius);
-  	--card-header-shadow: 0px 4px 12px 0px hsl(0,0%,0%,0.3);
-}
-
-/* Замена иконки личных сообщений */
-.privateChannels__35e86 .channel__972a0[data-list-item-id*="private"] .icon__0cbed {
-	background-image: url('file:///C:/Users/kakoj/Desktop/ARCH-RemoteNG/cookie.jpg') !important;
-	background-size: 26px 26px !important;
-	background-repeat: no-repeat !important;
-	background-position: center !important;
-}
+  /* APP ELEMENTS */
+  --app-bg: linear-gradient(135deg, rgb(25, 20, 18), rgb(35, 25, 22));
+  --app-blur: 12px;
+  --app-margin: 0px;
+  --app-radius: 8px;
+  --main-rgb: 255,255,255;
+  --main-content-opacity: 0.2;
+  --sidebar-opacity: 0.4;
+  --main-content-color: rgba(var(--main-rgb), var(--main-content-opacity));
+  --sidebar-color: rgba(var(--main-rgb), var(--sidebar-opacity));
   
-/* Скрываем оригинальную иконку */
-.privateChannels__35e86 .channel__972a0[data-list-item-id*="private"] svg {
-	display: none !important;
+  /* ACCENT HSL AND TEXT COLOR SETTINGS */
+  --accent-hue: 28;
+  --accent-saturation: 80%;
+  --accent-lightness: 60%;
+  --accent-hsl: var(--accent-hue),calc(var(--accent-saturation) * var(--saturation-factor)),var(--accent-lightness);
+  --accent-opacity: 1;
+  --accent-text-color: hsl(0,0%,100%);
+  
+  /* ALERT HSL AND TEXT COLOR SETTINGS */
+  --alert-hue: 0;
+  --alert-saturation: 70%;
+  --alert-lightness: 55%;
+  --alert-hsl: var(--alert-hue),calc(var(--alert-saturation) * var(--saturation-factor)),var(--alert-lightness);
+  --alert-opacity: 1;
+  --alert-action-color: hsl(0,0%,100%);
+  --alert-text-color: hsl(0,0%,100%);
+  
+  /* MENTION HSL COLOR SETTINGS */
+  --mention-hue: var(--accent-hue);
+  --mention-saturation: var(--accent-saturation);
+  --mention-lightness: var(--accent-lightness);
+  --mention-hsl: var(--mention-hue),calc(var(--mention-saturation) * var(--saturation-factor)),var(--mention-lightness);
+  --mention-opacity: 1;
+  
+  /* REPLY HSL COLOR SETTINGS */
+  --reply-hue: 32;
+  --reply-saturation: 45%;
+  --reply-lightness: 50%;
+  --reply-hsl: var(--reply-hue),calc(var(--reply-saturation) * var(--saturation-factor)),var(--reply-lightness);
+  --reply-opacity: 1;
+  
+  /* MESSAGE COLOR SETTINGS */
+  --message-color: hsl(0,0%,0%,0.25);
+  --message-color-hover: hsl(0,0%,0%,0.35);
+  --message-radius: var(--app-radius);
+  --message-padding-top: 10px;
+  --message-padding-side: 10px;
+  --notification-color: hsl(0,0%,100%);
+  --list-item-radius: var(--app-radius);
+  
+  /* TEXTAREA SETTINGS */
+  --textarea-color: 255,255,255;
+  --textarea-alpha: 0.12;
+  --textarea-alpha-focus: 0.18;
+  --textarea-text-color: hsl(0,0%,100%);
+  --textarea-placeholder-color: hsl(0,0%,85%);
+  --textarea-radius: 24px;
+  --textarea-block-color: hsl(0,0%,0%,0.4);
+  --textarea-block-text-color: #ccc;
+  
+  /* INPUT SETTINGS */
+  --input-height: 38px;
+  --input-radius: calc(var(--input-height) / 2);
+  
+  /* CARD SETTINGS */
+  --card-color: hsl(0,0%,0%,0.45);
+  --card-color-hover: hsl(0,0%,0%,0.55);
+  --card-color-select: hsl(0,0%,0%,0.65);
+  --card-radius: var(--app-radius);
+  --card-header-shadow: 0px 4px 12px 0px hsl(0,0%,0%,0.3);
+  
+  /* BUTTON SETTINGS */
+  --button-height: 36px;
+  --button-padding: 0 18px;
+  --button-color: hsla(var(--accent-hsl),var(--accent-opacity));
+  --button-action-color: hsl(0,0%,8%);
+  --button-text-color: var(--accent-text-color);
+  --button-radius: 18px;
+  
+  /* SWITCH SETTINGS */
+  --switch-slider-color: hsla(28,80%,60%,0.3);
+  --switch-knob-color: hsl(0,0%,15%);
+  
+  /* POPOUT SETTINGS */
+  --popout-color: hsl(0,0%,0%,0.65);
+  --popout-blur: 10px;
+  --popout-header-opacity: 0.35;
+  --popout-header-shadow: 0px 2px 4px 0px rgb(186, 148, 94);
+  --popout-radius: var(--app-radius);
+  --popout-shadow: 0 10px 12px 0px hsl(0,0%,0%,0.18), 0 4px 16px 3px hsl(0,0%,0%,0.15), 0 6px 6px -3px hsl(0,0%,0%,0.25);
+  
+  --nowplaying-color: 88,101,242;
+  --streaming-color: 89,54,149;
+  --spotify-color: 29,185,84;
+  --server-folder-color: hsl(0,0%,100%,0.1);
+  --supporter-color: hsla(var(--accent-hsl),var(--accent-opacity));
+  
+  /* TOOLTIP SETTINGS */
+  --tooltip-color: hsla(var(--accent-hsl),var(--accent-opacity));
+  --tooltip-text-color: var(--accent-text-color);
+  --tooltip-font-size: 14px;
+  --tooltip-padding: 8px 12px;
+  --tooltip-radius: var(--app-radius);
+  --tooltip-shadow: var(--elevation-high);
+  
+  /* ANIMATION SETTINGS */
+  --transition-time: 300ms;
+  --transition-type: cubic-bezier(0.4,0,0.2,1);
+  
+  /* SCROLLBAR SETTINGS */
+  --scrollbar-color: 255,255,255;
+  --scrollbar-color-alt: 0,0,0;
+  --scrollbar-opacity: 0.15;
+  
+  /* ELEVATION SETTINGS */
+  --elevation-low: 0 1px 3px 0 rgba(0,0,0,0.12), 0 1px 2px 0 rgba(0,0,0,0.24);
+  --elevation-medium: 0 3px 6px 0 rgba(0,0,0,0.16), 0 3px 6px 0 rgba(0,0,0,0.23);
+  --elevation-high: 0 10px 20px 0 rgba(0,0,0,0.19), 0 6px 6px 0 rgba(0,0,0,0.23);
+  --elevation-highest: 0 14px 28px 0 rgba(0,0,0,0.25), 0 10px 10px 0 rgba(0,0,0,0.22);
+  
+  /* CUSTOM MIDNIGHT COOKIE SETTINGS */
+  --midnight-primary: hsl(220, 15%, 12%);
+  --midnight-secondary: hsl(225, 12%, 15%);
+  --midnight-accent: hsl(28, 80%, 60%);
+  --midnight-accent-hover: hsl(28, 80%, 65%);
+  --midnight-text: hsl(0, 0%, 100%);
+  --midnight-text-secondary: hsl(0, 0%, 85%);
+  --midnight-border: hsl(28, 80%, 60%);
+  --midnight-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  
+  /* SATURATION FACTOR */
+  --saturation-factor: 1;
 }
 
-/* Дополнительные стили для MidnightCookie */
-.members__9f47b {
-	background: linear-gradient(135deg, hsl(220, 15%, 12%), hsl(225, 12%, 15%));
+/* GLOBAL STYLES */
+* {
+  box-sizing: border-box;
 }
 
-.channel__972a0:hover {
-	background: linear-gradient(90deg, hsla(28, 80%, 60%, 0.1), transparent);
-	transition: all 0.3s ease;
+/* МЯГКИЕ СТИЛИ ТОЛЬКО ДЛЯ ОСНОВНЫХ ЭЛЕМЕНТОВ */
+
+/* Основной фон приложения - ТОЛЬКО для главного контейнера */
+.app-2rEoOp,
+.app-3G6aL6 {
+  background: var(--app-bg);
+  backdrop-filter: blur(var(--app-blur));
 }
 
-.message__80c10 {
-	border-left: 3px solid transparent;
-	transition: border-left 0.3s ease;
+/* Боковая панель - ТОЛЬКО для левой панели с каналами */
+.sidebar-1tnWFu,
+.sidebar-2K8p4h {
+  background: rgba(25, 20, 18, 0.7);
+  backdrop-filter: blur(var(--app-blur));
 }
 
-.message__80c10:hover {
-	border-left-color: hsl(28, 80%, 60%);
+/* Основной контент - ТОЛЬКО для центральной области чата */
+.main-3J1Y_w,
+.main-2jE5z,
+[class*="chatContent"] {
+  background: transparent;
+  backdrop-filter: blur(var(--app-blur));
 }
 
-/* Стилизация скроллбара */
+/* Фон чата - прозрачность для фонового изображения */
+[class*="chat"] {
+  background: transparent;
+}
+
+[class*="chat"] [class*="scroller"] {
+  background: transparent;
+}
+
+[class*="background"] {
+  opacity: 1;
+}
+
+/* Сообщения с небольшим затемнением для читаемости поверх картинки */
+.message__80c10,
+.message-2qnXI6,
+[class*="message"] {
+  backdrop-filter: blur(3px);
+}
+
+/* Список каналов - ТОЛЬКО для панели каналов */
+.channels-Ie2l6A,
+.channels-3w2Apv {
+  background: rgba(220, 15%, 12%, 0.6);
+}
+
+/* Список серверов - ТОЛЬКО для крайней левой панели */
+.wrapper__3c3b8,
+.wrapper-3kah-n {
+  background: rgba(25, 20, 18, 0.8);
+}
+
+/* Список участников - ТОЛЬКО для правой панели */
+.members__9f47b,
+.members-3WRCEx {
+  background: linear-gradient(135deg, rgba(220, 15%, 12%, 0.6), rgba(225, 12%, 15%, 0.6));
+}
+
+/* Отдельные каналы - мягкие эффекты */
+.channel__972a0,
+.channel-2QD9_O {
+  border-radius: var(--app-radius);
+  margin: 2px 4px;
+  transition: all var(--transition-time) var(--transition-type);
+}
+
+.channel__972a0:hover,
+.channel-2QD9_O:hover {
+  background: linear-gradient(90deg, hsla(28, 80%, 60%, 0.1), transparent);
+  transform: translateX(2px);
+}
+
+/* Сообщения - ТОЛЬКО для фона сообщений */
+.message__80c10,
+.message-2qnXI6 {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: var(--message-radius);
+  padding: var(--message-padding-top) var(--message-padding-side);
+  margin: 4px 0;
+  border-left: 2px solid transparent;
+  transition: all var(--transition-time) var(--transition-type);
+}
+
+.message__80c10:hover,
+.message-2qnXI6:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-left-color: var(--midnight-accent);
+  transform: translateX(1px);
+}
+
+/* Поля ввода - ТОЛЬКО для основных полей */
+.textarea__58c0f,
+.textarea-3dMssd {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--textarea-radius);
+  color: var(--textarea-text-color);
+  transition: all var(--transition-time) var(--transition-type);
+}
+
+.textarea__58c0f:focus,
+.textarea-3dMssd:focus {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 2px var(--midnight-accent);
+}
+
+/* Кнопки - ТОЛЬКО для основных кнопок */
+.button__581d0,
+.button-1Y8ofr {
+  background: var(--button-color);
+  color: var(--button-text-color);
+  border-radius: var(--button-radius);
+  height: var(--button-height);
+  padding: var(--button-padding);
+  transition: all var(--transition-time) var(--transition-type);
+}
+
+.button__581d0:hover,
+.button-1Y8ofr:hover {
+  background: var(--midnight-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--midnight-shadow);
+}
+
+/* Карточки - ТОЛЬКО для основных карточек */
+.card__86773,
+.card-3Qj_Yx {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-header-shadow);
+  transition: all var(--transition-time) var(--transition-type);
+}
+
+.card__86773:hover,
+.card-3Qj_Yx:hover {
+  background: rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+  box-shadow: var(--elevation-medium);
+}
+
+/* Всплывающие окна - ТОЛЬКО для модальных окон */
+.popout__1a2b3,
+.popout-2sAQjE {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(var(--popout-blur));
+  border-radius: var(--popout-radius);
+  box-shadow: var(--popout-shadow);
+}
+
+/* Скроллбар - кастомный */
 ::-webkit-scrollbar {
-	width: 8px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-	background: hsl(220, 15%, 12%);
+  background: rgba(220, 15%, 12%, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
-	background: hsl(28, 80%, 60%);
-	border-radius: 4px;
+  background: var(--midnight-accent);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: hsl(28, 80%, 65%);
+  background: var(--midnight-accent-hover);
 }
 
+/* Уведомления - ТОЛЬКО для бейджей */
+.numberBadge__37OJj,
+.numberBadge-2s8NGK {
+  background: var(--alert-color);
+  color: var(--alert-text-color);
+}
+
+/* Упоминания - ТОЛЬКО для упомянутых сообщений */
+.mentioned__58017,
+.mentioned-Tre-dv {
+  background: hsla(var(--mention-hsl), 0.15);
+  border-left: 3px solid var(--midnight-accent);
+}
+
+/* Ответы - ТОЛЬКО для отвечающих сообщений */
+.replying__4d5c6,
+.replying-1Z6AZI {
+  background: hsla(var(--reply-hsl), 0.1);
+  border-left: 2px solid var(--midnight-accent);
+}
+
+/* Поля ввода - ТОЛЬКО для основных полей */
+.input__848cd,
+.input-2g-os5 {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--input-radius);
+  height: var(--input-height);
+  transition: all var(--transition-time) var(--transition-type);
+}
+
+.input__848cd:focus,
+.input-2g-os5:focus {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 2px var(--midnight-accent);
+}
+
+/* Переключатели - ТОЛЬКО для основных переключателей */
+.slider__4f96b,
+.slider-3mmyPV {
+  background: var(--switch-slider-color);
+}
+
+.slider__4f96b[style*="background-color: rgb(88, 101, 242)"],
+.slider-3mmyPV[style*="background-color: rgb(88, 101, 242)"] {
+  background: var(--midnight-accent);
+}
+
+/* Подсказки - ТОЛЬКО для тултипов */
+.tooltip__4f96b,
+.tooltip-3mmyPV {
+  background: var(--tooltip-color);
+  color: var(--tooltip-text-color);
+  border-radius: var(--tooltip-radius);
+  padding: var(--tooltip-padding);
+  font-size: var(--tooltip-font-size);
+  box-shadow: var(--tooltip-shadow);
+}
+
+/* Дополнительные контейнеры - ТОЛЬКО для основных */
+.container-1NXEtd,
+.container-2o3qEW {
+  background: rgba(220, 15%, 12%, 0.4);
+}
+
+.chat-2ZfjoI,
+.chat-3bRxxu,
+[class*="chat"] {
+  background: transparent;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-10px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* Применение анимаций - мягкие */
+.channel__972a0,
+.channel-2QD9_O {
+  animation: slideIn 0.3s ease-out;
+}
+
+.message__80c10,
+.message-2qnXI6 {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.button__581d0:active,
+.button-1Y8ofr:active {
+  animation: pulse 0.2s ease-in-out;
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+  :root {
+    --app-margin: 8px;
+    --app-radius: 6px;
+    --message-radius: 6px;
+    --textarea-radius: 20px;
+    --button-radius: 16px;
+  }
+  
+  .channel__972a0:hover,
+  .channel-2QD9_O:hover {
+    transform: none;
+  }
+  
+  .message__80c10:hover,
+  .message-2qnXI6:hover {
+    transform: none;
+  }
+}
+
+/* Темная тема */
+.theme-dark {
+  --midnight-primary: hsl(220, 15%, 8%);
+  --midnight-secondary: hsl(225, 12%, 10%);
+  --midnight-accent: hsl(28, 80%, 55%);
+  --midnight-accent-hover: hsl(28, 80%, 60%);
+}
+
+/* Светлая тема */
+.theme-light {
+  --midnight-primary: hsl(220, 15%, 95%);
+  --midnight-secondary: hsl(225, 12%, 90%);
+  --midnight-accent: hsl(28, 80%, 45%);
+  --midnight-accent-hover: hsl(28, 80%, 50%);
+  --midnight-text: hsl(0, 0%, 10%);
+  --midnight-text-secondary: hsl(0, 0%, 30%);
+}
+
+/* Доступность */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+  }
+}
+
+/* Высокий контраст */
+@media (prefers-contrast: high) {
+  :root {
+    --midnight-accent: hsl(28, 100%, 50%);
+    --midnight-accent-hover: hsl(28, 100%, 60%);
+    --midnight-border: hsl(28, 100%, 50%);
+  }
+}
+
+/* Печать */
+@media print {
+  * {
+    background: white;
+    color: black;
+    box-shadow: none;
+    text-shadow: none;
+  }
+}
+
+/* Замена иконки личных сообщений */
+.privateChannels__35e86 .channel__972a0[data-list-item-id*="private"] .icon__0cbed,
+.privateChannels-3w2Apv .channel-2QD9_O[data-list-item-id*="private"] .icon-3AqZ2e {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyQzIgMTcuNTIgNi40OCAyMiAxMiAyMkMxNy41MiAyMiAyMiAxNy41MiAyMiAxMkMyMiA2LjQ4IDE3LjUyIDIgMTIgMloiIGZpbGw9IiNGRkY5NjAiLz4KPHBhdGggZD0iTTggMTJDNy40NDc3MiAxMiA3IDExLjU1MjMgNyAxMUM3IDEwLjQ0NzcgNy40NDc3MiAxMCA4IDEwQzguNTUyMjggMTAgOSAxMC40NDc3IDkgMTFDOSAxMS41NTIzIDguNTUyMjggMTIgOCAxMloiIGZpbGw9IiM4QjQ1M0EiLz4KPHBhdGggZD0iTTE2IDEyQzE1LjQ0NzcgMTIgMTUgMTEuNTUyMyAxNSAxMUMxNSAxMC40NDc3IDE1LjQ0NzcgMTAgMTYgMTBDMTYuNTUyMyAxMCAxNyAxMC40NDc3IDE3IDExQzE3IDExLjU1MjMgMTYuNTUyMyAxMiAxNiAxMloiIGZpbGw9IiM4QjQ1M0EiLz4KPHBhdGggZD0iTTEyIDE4QzExLjQ0NzcgMTggMTEgMTcuNTUyMyAxMSAxN0MxMSAxNi40NDc3IDExLjQ0NzcgMTYgMTIgMTZDMTIuNTUyMyAxNiAxMyAxNi40NDc3IDEzIDE3QzEzIDE3LjU1MjMgMTIuNTUyMyAxOCAxMiAxOFoiIGZpbGw9IiM4QjQ1M0EiLz4KPC9zdmc+');
+  background-size: 26px 26px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Скрываем оригинальную иконку */
+.privateChannels__35e86 .channel__972a0[data-list-item-id*="private"] svg,
+.privateChannels-3w2Apv .channel-2QD9_O[data-list-item-id*="private"] svg {
+  display: none;
+}
+
+/* Обеспечиваем читаемость текста */
+[class*="text-"],
+[class*="title-"],
+[class*="header-"],
+[class*="label-"],
+[class*="name-"] {
+  color: inherit !important;
+}
+
+/* Мягкие тени для глубины */
+[class*="elevation-"],
+[class*="shadow-"] {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
