@@ -1,6 +1,8 @@
 :root {
   /* APP ELEMENTS */
-  --app-bg: linear-gradient(135deg, rgb(25, 20, 18), rgb(35, 25, 22));
+  --app-bg: linear-gradient(135deg, rgba(25, 20, 18, 0.85), rgba(35, 25, 22, 0.85)), url('https://raw.githubusercontent.com/JDaxmaut/midnight-cookie/main/eef877db84c911f0b84f02e3ec60f4f4_1.png');
+  --app-bg-position: center top;
+  --app-bg-size: 120px auto;
   --app-blur: 12px;
   --app-margin: 0px;
   --app-radius: 8px;
@@ -140,8 +142,12 @@
 }
 
 /* APP BACKGROUND */
-.app-2rEoOp {
+.app-2rEoOp,
+[class*="app"] {
   background: var(--app-bg) !important;
+  background-position: var(--app-bg-position) !important;
+  background-size: var(--app-bg-size) !important;
+  background-repeat: no-repeat !important;
   backdrop-filter: blur(var(--app-blur));
 }
 
