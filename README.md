@@ -5,6 +5,10 @@
 ![Status](https://img.shields.io/badge/status-draft-yellow.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JDaxmaut/midnight-cookie/main/eef877db84c911f0b84f02e3ec60f4f4_1.png" alt="MidnightCookie" width="120">
+</p>
+
 A sophisticated dark theme with warm cookie-inspired accents and midnight blue tones.
 
 ## Features
